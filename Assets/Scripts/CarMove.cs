@@ -9,14 +9,14 @@ public class CarMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && GameManager.Instance.isGameOver == false)
         {
             if (transform.position.x < 1.2f)
             {
                 transform.position = new Vector3(transform.position.x+1.2f, transform.position.y, 0);
             }
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && GameManager.Instance.isGameOver == false)
         {
             if (transform.position.x > -1.2f)
             {
