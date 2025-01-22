@@ -14,23 +14,10 @@ public class GameManager: MonoBehaviour
     public Button startButton;
     public GameObject startUI;
     public bool isGameOver;
-    public static GameManager Instance { get; private set; }
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        // 인스턴스 중복 방지
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject); // 기존 인스턴스가 있으면 새로운 오브젝트 삭제
-            return;
-        }
-
-        Instance = this; // 현재 인스턴스를 설정
-        DontDestroyOnLoad(gameObject); // 씬이 변경되어도 오브젝트 유지
-    }
     void Start()
     {
+
         isGameOver = true;
         gasPos = new Vector3(0, 5.5f, 0);
         gasSlider.value = 100f;
